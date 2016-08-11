@@ -6,13 +6,13 @@
 
 var arr = [];
 
-for (var j =0 ;j<100000;j++){
+for (var j =0 ;j<1000000;j++){
     arr[j] = j;
 }
 var group = [[], [], [], []];
 (function split(arr, group) {
-
-    var date3=new Date();  //开始时间
+    console.time("T1");
+    // var date3=new Date();  //开始时间
     var size = group.length; // 分多少组
     var length = arr.length; // 人数总长度
 
@@ -26,8 +26,9 @@ var group = [[], [], [], []];
     shuffle(group);//随机排序数组
 
     // console.log(group);
-    var date4=new Date();    //结束时间
-    console.log(date4.getTime()-date3.getTime());
+    // var date4=new Date();    //结束时间
+    // console.log(date4.getTime()-date3.getTime());
+    console.timeEnd("T1");
     console.log("Fisher–Yates Shuffle");
 })(arr, group);
 
